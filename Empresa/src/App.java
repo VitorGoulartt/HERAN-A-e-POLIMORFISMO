@@ -6,8 +6,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Produto produto1 = new Produto("lampada", "kian", 89090, 10, 15);
 
-        System.out.println("safada?");
-        produto1.alterarquantidade(sc.nextInt());
+        produto1.alterarquantidade(0);
+        produto1.Informacoes();
         sc.close();
     }
 }

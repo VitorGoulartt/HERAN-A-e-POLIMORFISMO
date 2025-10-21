@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Produto {
     Scanner sc = new Scanner(System.in);
+    Scanner sc2 = new Scanner(System.in);
     private String nome;
     private String marca;
     private int codigo;
@@ -29,10 +30,10 @@ public class Produto {
 
     }
     public String getmarca(){
-        return nome;
+        return marca;
     }
-    public void setmarca(String nome){
-        this.nome = nome;
+    public void setmarca(String marca){
+        this.marca = marca;
     }
     public int getcodigo(){
         return codigo;
@@ -60,40 +61,61 @@ public class Produto {
         System.out.println("2. Remover ");
         alterar = sc.nextInt();
         switch(alterar){
+            
             case 1:
+
+            System.out.println("Qual valor deseja");
+            alterar = sc2.nextInt();
+
             if( alterar != 0 || alterar > 0){
-             alterar += this.quantidade;
-             System.out.println("deu certo");
+             this.quantidade += alterar ;
+             System.out.println(this.quantidade);
 
             } else {
 
             System.err.println("Incorreta16");
 
              }
+             break;
 
             case 2:
+             System.out.println("Qual valor deseja");
+             alterar = sc2.nextInt();
+            
             if(alterar <= this.quantidade && alterar != 0){
-             alterar -= this.quantidade;
-             System.out.println("deu certo");
+                
+             this.quantidade -= alterar;
+             System.out.println(this.quantidade);
 
             } else {
 
             System.err.println("Incorreta16");
 
              }
+             break;
 
         }
+        
 
 
         
 
 
-        sc.close();
+       
        
 
 
     }
-    
+    public void Informacoes(){
+
+        System.out.println("Nome: " + this.nome );
+        System.out.println("marca: " + this.marca);
+        System.out.println("codigo: " + this.codigo );
+        System.out.println("Preço: R$" + this.preço);
+        System.out.println("Quantidade: " + this.quantidade);
+        
+        
+    }
 
 
 
